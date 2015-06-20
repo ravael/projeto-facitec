@@ -1,0 +1,76 @@
+<div class="page" data-ng-controller="cadastroMonografiaController">
+		<div class="panel panel-default">
+			<div class="panel-heading" style="text-align: center;">
+				<strong>
+					Cadastro de monografia</strong>
+			</div>
+			<div class="panel-body">
+				<form name="form_constraints" class="form-validation" novalidate>
+					<h2 class="text-thin">Informa&ccedil&otildees da monografia</h2>
+					<br/>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-4">
+								<label for="monografiaCodigo">Codigo:</label> <input type="number"
+									class="form-control" 
+									required  
+									data-ng-model="monografia.ano">
+								<span></span>
+							</div>
+<!-- 							<div class="col-md-4"> -->
+<!-- 								<label for="">Nome do aluno:</label> <input type="text" -->
+<!-- 									class="form-control"  -->
+<!-- 									required   -->
+<!-- 									data-ng-model="monografia.aluno"> -->
+<!-- 								<span></span> -->
+<!-- 							</div> -->
+							
+							<div class="col-md-4">
+										<label for="nomeAluno">
+											Nome do aluno:</label>
+										<select 
+												class="form-control"
+												id="nomeAluno"
+												data-ng-model="monografia.aluno" 
+												data-ng-options="aluno.nome for aluno in alunos">
+												  <option value="">-- Selecione aluno --</option>
+										</select>
+							</div>
+							
+							<div class="col-md-4">
+								<label for="">Disciplina:</label> <input type="text"
+									class="form-control" 
+									required  
+									data-ng-model="monografia.disciplina">
+								<span></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-12">
+								<label 	for="monografiaTema">Tema:</label>
+								<input 	type="text"
+										class="form-control"
+										id="monografiaTema" 
+										required 
+										data-ng-model="monografia.tema">
+							</div>
+                        </div>
+                     </div>
+
+					<button type="submit"
+							id="btnMonografia" 
+							class="btn btn-primary btn-block"
+							style="font-size: 20px;"
+							data-ng-click="inserirMonografia(monografia)">Cadastrar</button>
+					<div class="callout callout-info">
+						<p>Voce so podera cadastrar quando todos os campos forem validos.</p>
+					</div>
+				</form>
+			</div>
+		</div>
+</div>
+
+ 

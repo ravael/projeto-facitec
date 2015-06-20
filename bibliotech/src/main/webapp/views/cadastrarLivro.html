@@ -1,0 +1,103 @@
+<div class="page" data-ng-controller="cadastroLivroController">
+		<div class="panel panel-default">
+			<div class="panel-heading" style="text-align: center;">
+				<strong> Cadastro de livro</strong>
+			</div>
+			<div class="panel-body">
+				<form name="form_constraints"  class="form-validation" novalidate>
+					<strong><h2 class="text-thin">Informa&ccedil&otildees do livro</h2></strong> <br />
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<label for="isbn">ISBN:</label> <input type="number"
+									class="form-control" id="isbn" required
+									data-ng-model="livro.isbn"> <span></span>
+							</div>
+							<div class="col-md-6">
+								<label for="numeroEdicaoLivro">Numero da edicao:</label> <input
+									type="number" class="form-control" id="numeroEdicaoLivro"
+									required data-ng-model="livro.numeroEdicao">
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<label for="tituloLivro"> Titulo do livro:</label> <input
+									type="text" class="form-control" required id="tituloLivro"
+									data-ng-model="livro.titulo">
+							</div>
+							<div class="col-md-6">
+								<label for="subtituloLivro"> Subtitulo do livro:</label> <input
+									type="text" class="form-control" required id="subtituloLivro"
+									data-ng-model="livro.subtitulo">
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+									<label for="numeroExemplaresLivro">Numero de
+										exemplares:</label> <input type="number" class="form-control"
+										id="numeroExemplaresLivro" required
+										data-ng-model="livro.numeroExemplares"> <span></span>
+								</div>
+								<div class="col-md-6">
+									<label for="quantidadePaginasLivro"> Numero de paginas:</label> <input
+										type="number" class="form-control" id="quantidadePaginasLivro"
+										required data-ng-model="livro.quantidadePaginas">
+								</div>
+							</div>
+						</div>
+
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<label for="autorLivro"> Autor do livro:</label> <input
+							type="text" class="form-control" required id="autorLivro"
+							data-ng-model="livro.autor">
+					</div>
+					<div class="col-md-6">
+						<label for="categoriaLivro">Categoria</label> <input type="text"
+							class="form-control" id="categoriaLivro" required
+							data-ng-model="livro.categoria">
+					</div>
+				</div>
+			</div>
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<label for="estanteLivro">Estante:</label> <input type="text"
+									class="form-control" id="estanteLivro" required
+									data-ng-model="livro.estante">
+							</div>
+							<div class="col-md-6">
+										<label for="editoraLivro">
+											Editora:</label>
+										<select 
+												class="form-control"
+												id="editoraLivro"
+												data-ng-model="livro.editora" 
+												data-ng-options="editora.nome for editora in editoras">
+												  <option value="">-- Selecione editora --</option>
+										</select>
+							</div>
+						</div>
+					</div>
+
+					<button  type="submit" id="btnLivro" data-ng-click="inserirLivro(livro)"
+						class="btn btn-info btn-block" style="font-size: 20px;"
+						>Cadastrar</button>
+					<div class="callout callout-info">
+						<p>Voce so podera cadastrar quando todos os campos forem
+							validos.</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>

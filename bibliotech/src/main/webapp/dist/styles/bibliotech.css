@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+
+#pesquisaPorLivro {
+	width: 50%;
+	height: 100px;
+	font-size: 60px;
+	border-width: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.panel-primary {
+	width: 200%;
+	margin-left: 15px;
+}
+
+#btnLivro {
+	height: 50px;
+}
+
+.mini-box {
+	min-height: 105px;
+	padding: 20px;
+	margin-right: 11%;
+}
+
+.resultadoPesquisaLivro {
+	float: right;
+	clear: right;
+	position: left;
+	margin-right: 7%;
+	width: 800px;
+}
+
+.fieldStatusLivro {
+	border: outset;
+	border-color: buttonface;
+}
+
+.campoPesquisaLivro {
+	height: 64px;
+	border: none;
+	font-size: 18px;
+}
+.dropcap-circle.colored {
+	margin-left: 400px;
+}
+
+.text-thin {
+  font-weight: 300;
+  padding-right: 258px;
+}
+
+#panel-body {
+	padding-top: 1px;
+	padding-bottom: 0px;
+	width: 475px;
+	padding-left: 1px;
+	border-top-width: 0px;
+}
+
+.ui-select {
+	width: 469px;
+	padding-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.formataOptionSelect {
+	width: 465px;
+}
+tbody>tr>td>button {
+	text-align: center;
+}
+
+footer.table-footer {
+  margin-right: 441px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.login-page   {
+	margin-top: 160px;
+	margin-left: 72px;
+	/*   background-image: url("../images/background/1.jpg"); */}

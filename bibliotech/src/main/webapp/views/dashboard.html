@@ -1,0 +1,140 @@
+<div class="page page-table" data-ng-controller=tableController>
+
+		<h1 class="text-thin text-center">
+			<span class="dropcap-circle colored" style="margin-left: 340px;
+			">E</span>Biblioteca
+			Est&aacutecio/Facitec
+		</h1>
+
+	<section class="panel panel-default table-dynamic">
+        <div class="panel-heading"><strong style="font-size: 18px;"><span class="fa fa-search fa-2x"></span> BUSCA LIVRO</strong></div>
+
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-sm-8 col-xs-10">
+                    <form>
+                        <input type="text"
+                               placeholder="pesquisar"
+                               id="campoPesquisaLivro"
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+                <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <span>
+                        Mostrando {{filteredStores.length}}/{{livros.length}} encontrados
+                    </span>              
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th><div class="th">
+                        Titulo/Subtitulo
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('titulo') "
+                              data-ng-class="{active: row == 'titulo'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-titulo') "
+                              data-ng-class="{active: row == '-titulo'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Autor
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('titulo') "
+                              data-ng-class="{active: row == 'titulo'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-titulo') "
+                              data-ng-class="{active: row == '-titulo'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Editora
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('titulo') "
+                              data-ng-class="{active: row == 'titulo'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-titulo') "
+                              data-ng-class="{active: row == '-titulo'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                    	Situacao
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('titulo') "
+                              data-ng-class="{active: row == 'titulo'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-titulo') "
+                              data-ng-class="{active: row == '-titulo'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        A&ccedil&otildees
+                        <span class=""
+                              data-ng-click=" order('titulo') "
+                              data-ng-class="{active: row == 'titulo'}"></span>
+                        <span class=""
+                              data-ng-click=" order('-titulo') "
+                              data-ng-class="{active: row == '-titulo'}"></span>
+                        
+                    </div></th>
+                </tr>
+            </thead>
+            <tbody data-ng-controller="ModalDemoCtrl">
+                <tr data-ng-repeat="livro in currentPageStores">
+                    <td>{{livro.titulo}} - {{livro.subtitulo}}</td>
+                    <td>{{livro.autor}}</td>
+                    <td>{{livro.editora.nome}}</td>
+                    <td><span data-ng-class="situation()" id="situacao" class="label label-info">{{livro.situacao}}</span></td>
+                    <td><button  class="btn btn-primary btn-direction btn-left btn-reservar"  data-ng-click="open()">Reservar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+		<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-body">
+            
+           <h4>{{ nome }}</h4>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="realizaEmprestimo(livro.id)">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+   		</script>
+
+		<footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+                    <span>
+                        Mostra 
+                        <select data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()">
+                        </select> 
+                        por pagina
+                    </span>
+                </div>
+                <div class="col-md-6 text-right pagination-container">
+                    <pagination class="pagination-sm"
+                                ng-model="currentPage"
+                                total-items="filteredStores.length"
+                                max-size="4"
+                                ng-change="select(currentPage)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                boundary-links="true">
+                    </pagination>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</div>
+	
+	<!-- end stats -->
+
+
+	
+
+	
+

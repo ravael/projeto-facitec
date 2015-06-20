@@ -1,0 +1,53 @@
+<div class="page page-table" data-ng-controller="tableCtrl">
+
+<section class="panel panel-default table-dynamic">
+        <div class="panel-heading"><strong><span class=""></span> Solicitacoes</strong></div>
+
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-sm-4 col-xs-6">
+                    <form>
+                        <input type="text"
+                               placeholder="pesquisar"
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Titulo Reservado</th>
+                    <th>Situacao do pedido</th>
+                    <th>Acoes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="store in currentPageStores">
+                    <td>{{store.name}}</td>
+                    <td>{{store.price}}</td>
+                    <td><span class="label label-info">Suspended</span></td>
+                    <td><a href="javascript:;" class="btn-icon btn-icon-sm btn-dribbble"><i class="fa fa-dribbble"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <footer class="table-footer">
+                <div class="col-md-6 text-right pagination-container">
+                    <pagination class="pagination-sm"
+                                ng-model="currentPage"
+                                total-items="filteredStores.length"
+                                max-size="4"
+                                ng-change="select(currentPage)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                boundary-links="true">
+                   	</pagination>
+            	</div>
+        </footer>
+</div>
